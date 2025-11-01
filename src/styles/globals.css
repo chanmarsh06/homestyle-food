@@ -1,13 +1,43 @@
 @import "tailwindcss";
 
+/* ===============================
+   🌿 FRESHSOUL GLOBAL DESIGN SYSTEM
+   =============================== */
+
 :root {
-  --color-background: #fff7ed;
-  --color-surface: #ffffff;
-  --color-foreground: #432616;
-  --color-muted: #7f5539;
-  --color-accent: #f97316;
-  --color-accent-soft: #fbbf24;
-  --radius-md: 12px;
+  /* Core Brand Palette */
+  --color-primary-green: #3B7A57; /* Main organic green */
+  --color-accent-green: #7AC74F; /* Lively accent for highlights */
+  --color-deep-green: #264E36; /* For contrast-rich elements */
+  --color-highlight-cta: #FF8C00; /* Warm orange – appetite trigger */
+  --color-highlight-hover: #E67E00; /* CTA hover version */
+  --color-background: #FFFFFF;
+  --color-secondary-background: #F7F9F4; /* Subtle off-white green tint */
+  --color-cream-background: #FFFDF8; /* Natural creamy background */
+  --color-border-divider: #DCE5D3;
+  --color-shadow-soft: rgba(0, 0, 0, 0.08);
+  --color-text-primary: #2E2E2E;
+  --color-text-accent: #3B7A57;
+  --color-text-muted: #8D9B8B;
+
+  /* Gradient Styles */
+  --gradient-hero: linear-gradient(135deg, #F7F9F4 0%, #FFFFFF 100%);
+  --gradient-cta: linear-gradient(90deg, #FF8C00 0%, #FFC04C 100%);
+  --gradient-footer: linear-gradient(180deg, #3B7A57 0%, #264E36 100%);
+
+  /* Radius and Depth */
+  --radius-cozy: 16px;
+  --radius-pill: 9999px;
+  --radius-card: 20px;
+  --shadow-base: 0 4px 8px var(--color-shadow-soft);
+  --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.12);
+
+  /* Typography System */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', 'Poppins', sans-serif;
+
+  /* Transitions */
+  --transition-base: all 0.3s ease;
 }
 
 html {
@@ -16,46 +46,137 @@ html {
 
 body {
   background-color: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-geist-sans), "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
 }
+
+/* ===============================
+   🌐 LAYOUT UTILITIES
+   =============================== */
 
 main {
   width: 100%;
 }
 
 .tailwind-container {
-  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
 .section-padding {
-  @apply py-16 sm:py-20;
+  @apply py-20 sm:py-24;
 }
 
+/* ===============================
+   🔘 BUTTONS
+   =============================== */
+
+/* Primary CTA */
 .btn-primary {
-  @apply rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow transition duration-200 hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500;
+  @apply rounded-full px-6 py-3 text-sm font-semibold text-white shadow transition duration-200;
+  background: var(--gradient-cta);
+  box-shadow: var(--shadow-base);
+}
+.btn-primary:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-highlight-hover);
+  outline-offset: 2px;
 }
 
+/* Secondary Outline */
 .btn-secondary {
-  @apply rounded-full border border-orange-500 px-6 py-3 text-sm font-semibold text-orange-600 transition duration-200 hover:bg-orange-50;
+  @apply rounded-full px-6 py-3 text-sm font-semibold transition duration-200;
+  border: 1.5px solid var(--color-primary-green);
+  color: var(--color-primary-green);
+  background-color: transparent;
 }
+.btn-secondary:hover {
+  background-color: color-mix(in srgb, var(--color-primary-green) 8%, white);
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   💎 CARD STYLES
+   =============================== */
 
 .glass-card {
-  @apply rounded-[var(--radius-md)] bg-white/80 shadow-lg backdrop-blur;
+  @apply bg-white/80 backdrop-blur-md shadow-lg transition;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-base);
+}
+.glass-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
 }
 
+/* ===============================
+   ✨ TYPOGRAPHY
+   =============================== */
+
 .section-heading {
-  @apply text-3xl font-semibold text-orange-600 sm:text-4xl;
+  @apply text-3xl font-bold sm:text-4xl mb-4;
+  font-family: var(--font-display);
+  color: var(--color-text-accent);
+  letter-spacing: -0.5px;
 }
 
 .section-subtitle {
-  @apply mt-2 max-w-2xl text-base text-amber-700 sm:text-lg;
+  @apply max-w-2xl text-base sm:text-lg;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
 }
 
 .text-muted {
-  color: var(--color-muted);
+  color: var(--color-text-muted);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-text-accent);
+}
+
+/* ===============================
+   🧭 SECTION BACKGROUNDS
+   =============================== */
+
+.hero-section {
+  background: var(--gradient-hero);
+}
+
+.about-chef-section {
+  background-color: var(--color-secondary-background);
+}
+
+.menu-section {
+  background-color: var(--color-background);
+}
+
+.delivery-section {
+  background-color: var(--color-cream-background);
+}
+
+/* ===============================
+   🪄 EFFECTS
+   =============================== */
+
+/* Floating animation for ingredients / icons */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ===============================
+   🦶 FOOTER
+   =============================== */
+
 footer {
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(251, 191, 36, 0.1));
+  background: var(--gradient-footer);
+  color: var(--color-background);
+  padding: 3rem 0;
 }
