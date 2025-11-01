@@ -10,9 +10,9 @@ export default function HeroSection() {
     
     <section
       className="relative bg-cover bg-center bg-no-repeat"
-      // style={{
-      //    backgroundImage: `url(${heroLightMealsBg.src})` // ✅ use your background image path
-      // }}
+      style={{
+         backgroundImage: `url(${heroLightMealsBg.src})` // ✅ use your background image path
+      }}
     >
       {/* Optional subtle overlay for better text readability */}
       <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px]" />
