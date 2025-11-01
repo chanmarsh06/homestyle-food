@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button, Tag } from "antd";
-import dynamic from "next/dynamic";
-
-const OrderForm = dynamic(() => import("@/components/OrderForm"), { ssr: false });
+import OrderForm from "@/components/OrderForm";
 import MotionWrapper from "@/components/MotionWrapper";
 
 export const metadata: Metadata = {

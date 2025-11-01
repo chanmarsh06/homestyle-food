@@ -1,5 +1,5 @@
 import { Dish } from "@/types";
-import { bg1} from "@/asset/bg/index"
+import { prawnDishBg} from "@/asset/bg/index"
 
 
 export const dishes: Dish[] = [
@@ -9,7 +9,7 @@ export const dishes: Dish[] = [
     description: "Crispy rice crepe filled with spiced potato mash, served with coconut chutney and sambar.",
     price: "₹180",
     image:
-      bg1,
+      prawnDishBg,
     spiceLevel: "Medium",
     servings: "Serves 1",
   },
@@ -19,7 +19,7 @@ export const dishes: Dish[] = [
     description: "Slow-cooked tomato gravy with tender chicken simmered in homemade butter and cream.",
     price: "₹320",
      image:
-      bg1,
+      prawnDishBg,
     spiceLevel: "Mild",
     servings: "Serves 2",
   },
@@ -29,7 +29,7 @@ export const dishes: Dish[] = [
     description: "Char-grilled cottage cheese cubes marinated with yogurt, Kashmiri chilli, and house spices.",
     price: "₹260",
   image:
-      bg1,
+      prawnDishBg,
     spiceLevel: "Medium",
     servings: "Serves 2",
   },
@@ -39,7 +39,7 @@ export const dishes: Dish[] = [
     description: "Layered basmati rice with farm vegetables, mint, saffron, and caramelized onions.",
     price: "₹280",
    image:
-      bg1,
+      prawnDishBg,
     spiceLevel: "Hot",
     servings: "Serves 2",
   },
@@ -49,7 +49,7 @@ export const dishes: Dish[] = [
     description: "Fresh catch simmered in coastal style coconut gravy with curry leaves and mustard seeds.",
     price: "₹340",
     image:
-      bg1,
+      prawnDishBg,
     spiceLevel: "Medium",
     servings: "Serves 2",
   },
@@ -59,7 +59,7 @@ export const dishes: Dish[] = [
     description: "Home-style yellow lentils tempered with ghee, garlic, cumin, and dry chillies.",
     price: "₹180",
   image:
-      bg1,
+      prawnDishBg,
     spiceLevel: "Mild",
     servings: "Serves 2",
   },
@@ -69,7 +69,7 @@ export const dishes: Dish[] = [
     description: "Soft khoya dumplings soaked in saffron rose syrup, garnished with pistachios.",
     price: "₹140",
    image:
-      bg1,
+      prawnDishBg,
     spiceLevel: "Sweet",
     servings: "4 pieces",
   },
@@ -79,7 +79,7 @@ export const dishes: Dish[] = [
     description: "Comforting foxtail millet cooked with seasonal vegetables, turmeric, and clarified butter.",
     price: "₹220",
    image:
-      bg1,
+      prawnDishBg,
     spiceLevel: "Light",
     servings: "Serves 2",
   },
