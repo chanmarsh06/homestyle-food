@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Button, Card, Space } from "antd";
 import MotionWrapper from "@/components/MotionWrapper";
+import ContactForm from "@/components/sections/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -20,7 +21,7 @@ export default function ContactPage() {
       </MotionWrapper>
       <div className="mt-12 grid gap-6 lg:grid-cols-[1.3fr,0.7fr]">
         <MotionWrapper className="glass-card overflow-hidden">
-          {/* <iframe
+          <iframe
             title="Amma's Kitchen location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5798652103464!2d77.63945957571146!3d12.935526387379054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15299a9f8d4d%3A0xcba5a380168d99b8!2sIndiranagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1704900000000!5m2!1sen!2sin"
             width="100%"
@@ -29,7 +30,7 @@ export default function ContactPage() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
-          /> */}
+          />
         </MotionWrapper>
         <MotionWrapper delay={0.1} className="flex flex-col gap-6">
           <Card className="rounded-[var(--radius-md)] shadow-sm">
@@ -67,6 +68,7 @@ export default function ContactPage() {
           </Card>
         </MotionWrapper>
       </div>
+      <ContactForm />
     </section>
   );
 }

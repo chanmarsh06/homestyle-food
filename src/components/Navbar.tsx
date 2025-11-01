@@ -7,14 +7,16 @@ import { Button, Drawer } from "antd";
 import { FiMenu, FiX, FiPhoneCall } from "react-icons/fi";
 import MotionWrapper from "@/components/MotionWrapper";
 import Loader from "@/components/Loader";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Menu", href: "/menu" },
+  { label: "About", href: "/about" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Testimonials", href: "/testimonials" },
   { label: "Order", href: "/order" },
   { label: "Contact", href: "/contact" },
-  { label: "Chef", href: "/#about" },
-  { label: "Testimonials", href: "/#testimonials" },
 ];
 
 export default function Navbar() {
@@ -54,6 +56,7 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
           <Link href="https://wa.me/919876543210" target="_blank">
             <Button type="primary" shape="round" icon={<FiPhoneCall />} size="large">
               Call Now

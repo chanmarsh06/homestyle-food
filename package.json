@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "type-check": "tsc --noEmit",
+    "preview": "next build && next start",
+    "clean": "rm -rf .next out"
   },
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.2.0",

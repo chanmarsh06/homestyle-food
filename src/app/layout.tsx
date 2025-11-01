@@ -1,22 +1,17 @@
 import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider, theme } from "antd";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import Link from "next/link";
 import "antd/dist/reset.css";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import GSAPProvider from "@/components/GSAPProvider";
+import { ThemeProvider } from "@/context/ThemeContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
   // metadataBase: new URL("https://ammaskitchen.local"),
@@ -57,27 +52,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-[var(--color-background)] antialiased`}>
-        <AntdRegistry>
-          <ConfigProvider
-            theme={{
-              algorithm: theme.defaultAlgorithm,
-              token: {
-                colorPrimary: "#f97316",
-                borderRadius: 12,
-                fontFamily: "var(--font-geist-sans)",
-              },
-            }}
-          >
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-            <div className="sr-only" aria-hidden>
-              <Link href="#about">About Section</Link>
-            </div>
-          </ConfigProvider>
-        </AntdRegistry>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <body>
+        <ThemeProvider>
+          <AntdRegistry>
+            <ConfigProvider
+              theme={{
+                algorithm: theme.defaultAlgorithm,
+                token: {
+                  colorPrimary: "#FF8C00",
+                  borderRadius: 12,
+                  fontFamily: "Inter, sans-serif",
+                },
+              }}
+            >
+              <GSAPProvider>
+                <Navbar />
+                <main>{children}</main>
+                <Footer />
+                <div className="sr-only" aria-hidden>
+                  <Link href="#about">About Section</Link>
+                </div>
+              </GSAPProvider>
+            </ConfigProvider>
+          </AntdRegistry>
+        </ThemeProvider>
       </body>
     </html>
   );

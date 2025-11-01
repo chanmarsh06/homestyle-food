@@ -2,7 +2,7 @@ import ImageManager from "@/components/ImageManager";
 import Link from "next/link";
 import { Button, Tag } from "antd";
 import MotionWrapper from "@/components/MotionWrapper";
-import { prawnDishBg } from "@/asset/bg/index";
+import { prawnDishBg, prawnCookingBg ,heroDarkMealsBg} from "@/asset/bg/index";
 import { heroLightMealsBg } from "@/asset/bg/index";
 
 export default function HeroSection() {
@@ -10,9 +10,9 @@ export default function HeroSection() {
     
     <section
       className="relative bg-cover bg-center bg-no-repeat"
-      style={{
-         backgroundImage: `url(${heroLightMealsBg.src})` // ✅ use your background image path
-      }}
+      // style={{
+      //    backgroundImage: `url(${heroLightMealsBg.src})` // ✅ use your background image path
+      // }}
     >
       {/* Optional subtle overlay for better text readability */}
       <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px]" />
@@ -68,7 +68,7 @@ export default function HeroSection() {
         <MotionWrapper delay={0.1} className="relative">
           <div className="glass-card overflow-hidden rounded-2xl shadow-lg">
             <ImageManager
-              src={prawnDishBg}
+              src={heroDarkMealsBg}
               alt="Home-style cooking"
               width={640}
               height={640}

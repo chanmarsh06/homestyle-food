@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Col, Row } from "antd";
-import DishCard from "@/components/DishCard";
-import MotionWrapper from "@/components/MotionWrapper";
-import { dishes } from "@/data/dishes";
+import MenuClient from "./MenuClient";
 
 export const metadata: Metadata = {
   title: "Menu",
@@ -11,21 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function MenuPage() {
-  return (
-    <section className="tailwind-container section-padding">
-      <MotionWrapper className="mx-auto max-w-2xl text-center">
-        <h1 className="section-heading">This week&apos;s lovingly cooked menu</h1>
-        <p className="section-subtitle">
-          Freshly sourced produce, traditional spice blends, and mindful cooking techniques come together in dishes that nourish the body and soul.
-        </p>
-      </MotionWrapper>
-      <Row gutter={[24, 24]} className="mt-12">
-        {dishes.map((dish) => (
-          <Col xs={24} sm={12} lg={8} key={dish.id}>
-            <DishCard dish={dish} />
-          </Col>
-        ))}
-      </Row>
-    </section>
-  );
+  return <MenuClient />;
 }

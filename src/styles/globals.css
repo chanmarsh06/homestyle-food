@@ -20,6 +20,20 @@
   --color-text-accent: #3B7A57;
   --color-text-muted: #8D9B8B;
 
+  /* Primary colors for consistency */
+  --color-primary: #FF8C00;
+}
+
+[data-theme="dark"] {
+  --color-background: #1a1a1a;
+  --color-secondary-background: #2a2a2a;
+  --color-cream-background: #252525;
+  --color-border-divider: #404040;
+  --color-shadow-soft: rgba(0, 0, 0, 0.3);
+  --color-text-primary: #e5e5e5;
+  --color-text-accent: #FF8C00;
+  --color-text-muted: #a0a0a0;
+
   /* Gradient Styles */
   --gradient-hero: linear-gradient(135deg, #F7F9F4 0%, #FFFFFF 100%);
   --gradient-cta: linear-gradient(90deg, #FF8C00 0%, #FFC04C 100%);
@@ -49,6 +63,7 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-body);
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ===============================
@@ -172,6 +187,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===============================
+   🎠 CAROUSEL STYLES
+   =============================== */
+
+.testimonial-carousel .slick-dots {
+  bottom: -50px;
+}
+
+.testimonial-carousel .slick-dots li button {
+  background: var(--color-highlight-cta);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+.testimonial-carousel .slick-dots li.slick-active button {
+  background: var(--color-highlight-hover);
+  width: 12px;
+  height: 12px;
+}
+
+/* ===============================
    🦶 FOOTER
    =============================== */
 
@@ -179,4 +215,22 @@ footer {
   background: var(--gradient-footer);
   color: var(--color-background);
   padding: 3rem 0;
+}
+
+/* ===============================
+   📱 RESPONSIVE UTILITIES
+   =============================== */
+
+@media (max-width: 768px) {
+  .section-heading {
+    @apply text-2xl sm:text-3xl;
+  }
+  
+  .section-subtitle {
+    @apply text-sm sm:text-base;
+  }
+  
+  .tailwind-container {
+    @apply px-3 sm:px-4;
+  }
 }
